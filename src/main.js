@@ -7,6 +7,15 @@ import './assets/css/global.css'
 // 导入阿里字体图标
 import './assets/fonts/iconfont.css'
 
+import TreeTable from 'vue-table-with-tree-grid'
+
+// 全局引入公共组件
+import Breadcrumb from './common/breadcrumb/Breadcrumb.vue'
+// 全局注册公共组件
+Vue.component('bread-crumb', Breadcrumb)
+
+Vue.component('tree-table', TreeTable)
+
 import axios from 'axios'
 // 配置请求根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
@@ -21,6 +30,7 @@ axios.interceptors.request.use((config) => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+
 
 new Vue({
   router,

@@ -15,6 +15,7 @@ body, html, #app {
   margin-top: 15px;
 }
 
-.el-pagination {
-  margin-top: 15px;
+/* 解决级联选择器高度问题 */
+.el-cascader-panel {
+  height: 300px;
 }
