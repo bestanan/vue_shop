@@ -126,7 +126,7 @@ export default {
           label: '操作',
           type: 'template',
           template: 'handle',
-          minWidth: '120px'
+          minWidth: '130px'
         }
       ],
       // 控制添加分类对话框的显示与隐藏
@@ -147,7 +147,7 @@ export default {
       // 级联选择器配置
       cascaderProps: {
         expandTrigger: 'hover', // click 或 hover
-        checkStrictly: true,
+        checkStrictly: true, // 一二三级都可选
         value: 'cat_id',
         label: 'cat_name',
         children: 'children'
