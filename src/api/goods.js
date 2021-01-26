@@ -1,14 +1,14 @@
 import request from './request'
 
 // 获取商品分类数据列表
-function _getCateList(query) {
+function _getCateList(queryInfo) {
   return request({
     method: 'get',
     url: 'categories',
-    params: query
+    params: queryInfo
   })
   // request.get('categories', {
-  //   params: query
+  //   params: queryInfo
   // })
 }
 
@@ -22,11 +22,11 @@ function _addCate(postdata) {
 }
 
 // 获取参数列表
-function _getParamsList(id, query) {
+function _getParamsList(id, queryInfo) {
   return request({
     method: 'get',
     url: `categories/${id}/attributes`,
-    params: query
+    params: queryInfo
   })
 }
 
@@ -40,11 +40,11 @@ function _addParams(id, data) {
 }
 
 // 根据 id 查询参数
-function _getParamById(cateId, attrId, query) {
+function _getParamById(cateId, attrId, queryInfo) {
   return request({
     method: 'get',
     url: `categories/${cateId}/attributes/${attrId}`,
-    params: query
+    params: queryInfo
   })
 }
 
@@ -65,6 +65,24 @@ function _deleteParamById(cateId, attrId) {
   })
 }
 
+// --商品列表--
+// 获取商品列表
+function _getGoodsList(queryInfo) {
+  return request({
+    method: 'get',
+    url: 'goods',
+    params: queryInfo
+  })
+}
+
+// 删除商品
+function _deleteGoodsById(goodsId) {
+  return request({
+    method: 'delete',
+    url: `goods/${goodsId}`
+  })
+}
+
 export {
   _getCateList,
   _addCate,
@@ -72,5 +90,7 @@ export {
   _addParams,
   _getParamById,
   _updateParamById,
-  _deleteParamById
+  _deleteParamById,
+  _getGoodsList,
+  _deleteGoodsById
 }
