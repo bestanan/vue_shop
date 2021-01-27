@@ -83,6 +83,15 @@ function _deleteGoodsById(goodsId) {
   })
 }
 
+// 添加商品
+function _addGoods(data) {
+  return request({
+    method: 'post',
+    url: 'goods',
+    data: data
+  })
+}
+
 export {
   _getCateList,
   _addCate,
@@ -92,5 +101,6 @@ export {
   _updateParamById,
   _deleteParamById,
   _getGoodsList,
-  _deleteGoodsById
+  _deleteGoodsById,
+  _addGoods
 }

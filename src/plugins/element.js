@@ -32,7 +32,11 @@ import {
   Cascader,
   Alert,
   Tabs,
-  TabPane
+  TabPane,
+  Steps,
+  Step,
+  Checkbox,
+  Upload
 } from 'element-ui'
 
 // 全局注册组件
@@ -66,6 +70,10 @@ Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(Checkbox)
+Vue.use(Upload)
 
 // Message 使用方式不一样，需要挂载
 Vue.prototype.$message = Message
