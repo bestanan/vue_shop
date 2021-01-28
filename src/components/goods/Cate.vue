@@ -69,7 +69,7 @@
            -->
           <el-cascader
             v-model="selectedIds"
-            :options="parentCateLis"
+            :options="parentCateList"
             :props="cascaderProps"
             @change="parentCateChange"
             clearable></el-cascader>
@@ -102,7 +102,7 @@ export default {
       // 商品分类数据列表
       cateList: [],
       // 父级分类数据列表
-      parentCateLis: [],
+      parentCateList: [],
       // 总条数
       total: 0,
       columns: [
@@ -175,7 +175,7 @@ export default {
     // 获取父级分类数据列表（最多三层，获取1、2级分类）
     async getParentCateList() {
       const { data: res } = await _getCateList({ type: 2 })
-      this.parentCateLis = res
+      this.parentCateList = res
       console.log(res)
     },
     parentCateChange() {
