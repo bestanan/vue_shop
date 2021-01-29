@@ -1,5 +1,8 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
+// 导入 loading 进度条
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 
 // 新建一个 axios 实例
@@ -11,6 +14,8 @@ const request = axios.create({
 // 添加请求拦截器
 request.interceptors.request.use( config => {
   // 在发送请求前做些什么
+  // 展示进度条
+  NProgress.start()
   // 除登录接口外的所有接口，必须在请求头中使用 Authorization 字段提供 token 令牌
   // console.log(config)
   config.headers.Authorization = window.sessionStorage.getItem('token')
@@ -30,6 +35,8 @@ request.interceptors.response.use( response => {
   if(status !== 200 && status !== 201) {
     return Message.error(res.meta.msg)
   }
+  // 隐藏进度条
+  NProgress.done()
   // return res.data
   return res
 }, error => {
