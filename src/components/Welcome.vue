@@ -1,6 +1,7 @@
 <template>
   <div>
-    Welcome 组件
+    <h1>Welcome</h1>
+    <p>欢迎鸭o-o</p>
   </div>
 </template>
 
