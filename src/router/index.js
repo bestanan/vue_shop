@@ -12,8 +12,7 @@ import Goods from '../components/goods/Goods.vue'
 import GoodsAdd from '../components/goods/GoodsAdd.vue'
 import Order from '../components/order/Order.vue'
 import Report from '../components/report/Report.vue'
-
-
+import NotFound from '../components/NotFound.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +41,10 @@ const routes = [
       { path: '/orders', component: Order },
       { path: '/reports', component: Report }
     ]
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 
